@@ -10,6 +10,7 @@ This book is ideal for several audiences:
 - You took a Computer Science degree long ago and want to refresh your memory and learn modern algorithms.
 
 ## How to read this book?
+test
 
 ## Feedback
 This book is in the embryonic stage, and there must be mistakes. I am happy to receive your feedback, comments, and suggestions. I look forward to hearing from you.
