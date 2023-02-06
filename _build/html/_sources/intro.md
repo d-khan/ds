@@ -9,8 +9,6 @@ This book is ideal for several audiences:
 - You are a self-taught developer and do not have a formal Computer Science degree. You want to learn how to write efficient and scalable code.
 - You took a Computer Science degree long ago and want to refresh your memory and learn modern algorithms.
 
-## How to read this book?
-
 ## Feedback
 This book is in the embryonic stage, and there must be mistakes. I am happy to receive your feedback, comments, and suggestions. I look forward to hearing from you.
 

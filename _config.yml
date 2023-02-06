@@ -35,3 +35,4 @@ html:
 #If you’d like Jupyter Book to skip a file entirely, you can do so with the following configuration in _config.yml:
 
 exclude_patterns: [pattern1/*, markdown-notebooks.md, markdown.md]
+
