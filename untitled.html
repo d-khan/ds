@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Welcome to Data Structures in C++ &#8212; Data Structures in C++</title>
+    <title>&lt;no title&gt; &#8212; Data Structures in C++</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Why learn data structures?" href="Data_structures.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -106,8 +105,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Welcome to Data Structures in C++
                 </a>
             </li>
@@ -174,6 +173,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Untitled.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -213,7 +241,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FUntitled.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -241,7 +269,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/intro.md"
+        <a href="_sources/Untitled.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -252,7 +280,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -299,17 +327,7 @@ title="Print to PDF"
         <i class="fas fa-list"></i> Contents
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#who-is-this-book-for">
-   Who is this book for?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#feedback">
-   Feedback
-  </a>
- </li>
+        <ul class="simple visible nav section-nav flex-column">
 </ul>
 
     </nav>
@@ -319,7 +337,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Welcome to Data Structures in C++</h1>
+                <h1><no title></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -328,17 +346,7 @@ title="Print to PDF"
                             <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#who-is-this-book-for">
-   Who is this book for?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#feedback">
-   Feedback
-  </a>
- </li>
+                            <ul class="simple visible nav section-nav flex-column">
 </ul>
 
                         </nav>
@@ -349,36 +357,45 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="welcome-to-data-structures-in-c">
-<h1>Welcome to Data Structures in C++<a class="headerlink" href="#welcome-to-data-structures-in-c" title="Permalink to this headline">#</a></h1>
-<p>I am in the process of creating a free resource for students who are interested in the Data Structures course. I am using C++ and Python languages as tools to implement data structures. This book assumes that you have acquired basic programming skills before reading the book.</p>
-<section id="who-is-this-book-for">
-<h2>Who is this book for?<a class="headerlink" href="#who-is-this-book-for" title="Permalink to this headline">#</a></h2>
-<p>This book is ideal for several audiences:</p>
-<ul class="simple">
-<li><p>You are a computer science student with a background in programming languages such as C++/Java/Python<a class="footnote-reference brackets" href="#note" id="id1">1</a>, and want to learn data structures appliedly. This book can be used as a supplementary learning resource in addition to any “conventional” textbook on data structures.</p></li>
-<li><p>You are learning Data Science/Analytics and want to learn how to deal with a large amount of data and perform searching, addition, and deletion on larger data sets with efficiency in mind.</p></li>
-<li><p>You are a self-taught developer and do not have a formal Computer Science degree. You want to learn how to write efficient and scalable code.</p></li>
-<li><p>You took a Computer Science degree long ago and want to refresh your memory and learn modern algorithms.</p></li>
-</ul>
-</section>
-<section id="feedback">
-<h2>Feedback<a class="headerlink" href="#feedback" title="Permalink to this headline">#</a></h2>
-<p>This book is in the embryonic stage, and there must be mistakes. I am happy to receive your feedback, comments, and suggestions. I look forward to hearing from you.</p>
-<hr class="docutils" />
-<p>Danish Khan<br />
-<a class="reference external" href="mailto:dkhan1010&#37;&#52;&#48;gmail&#46;com">dkhan1010<span>&#64;</span>gmail<span>&#46;</span>com</a><br />
-Jan 2023</p>
-<hr class="footnotes docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="note"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>CISC 192 with a grade of “C” or better, or equivalent is a pre-requisite course for students taking CISC-187 Data Structures in C++ at SD Miramar.</p>
-</dd>
-</dl>
-</section>
-<div class="toctree-wrapper compound">
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
 </div>
-</section>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Hello World&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_email</span> <span class="o">=</span> <span class="s2">&quot;dkhan1010@gmail.com&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -407,13 +424,6 @@ Jan 2023</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="Data_structures.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Why learn data structures?</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>

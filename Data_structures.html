@@ -52,6 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Searching and Big O Notations" href="Searching_bigO.html" />
     <link rel="prev" title="Welcome to Data Structures in C++" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -116,6 +117,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Why learn data structures?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Searching_bigO.html">
+   Searching and Big O Notations
   </a>
  </li>
 </ul>
@@ -435,7 +441,8 @@ software engineering degree takes this course at the undergraduate level. The da
 Efficiency can be defined as how the code utilizes space and time.
 </div>
 For example, look at these two functions, which print all the even numbers; however, one code runs faster than the other.
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>\<span class="c1"># Version 1</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; The following code is written in Python &quot;&quot;&quot;</span>
+<span class="sd">&quot;&quot;&quot; Version 1 &quot;&quot;&quot;</span>
 <span class="k">def</span> <span class="nf">print_numbers_version_one</span><span class="p">():</span>
     <span class="n">number</span> <span class="o">=</span> <span class="mi">2</span>
     <span class="n">temp</span> <span class="o">=</span> <span class="mi">1</span>
@@ -447,7 +454,7 @@ For example, look at these two functions, which print all the even numbers; howe
         <span class="n">number</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loop executed&quot;</span><span class="p">,</span><span class="n">temp</span><span class="p">,</span><span class="s2">&quot;times&quot;</span><span class="p">)</span>
 
-\<span class="c1"># Version 2</span>
+<span class="sd">&quot;&quot;&quot; Version 2 &quot;&quot;&quot;</span>
 <span class="k">def</span> <span class="nf">print_numbers_version_two</span><span class="p">():</span>
     <span class="n">number</span> <span class="o">=</span> <span class="mi">2</span>
     <span class="n">temp</span> <span class="o">=</span> <span class="mi">0</span>
@@ -657,7 +664,7 @@ Deletion from an array is the process of eliminating the value at a particular i
 </section>
 <section id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
-<p>Choosing the proper data structure for your application is crucial, mainly when the software deals with a large amount of data and continuously performs read, insert, search and delete operations. It is a programmer’s job to analyze the time complexity of a data structure to prepare the software better when the demand is high. In this chapter, you have learned what an algorithm is, why you need an algorithm, and how to think of a data structure from the time complexity point of view.</p>
+<p>Choosing the proper data structure for your application is crucial, mainly when the software deals with a large amount of data and continuously performs read, insert, search and delete operations. It is a programmer’s job to analyze the time complexity of a data structure to better prepare the software when the demand is high. In this chapter, you have learned what an algorithm is, why you need an algorithm, and how to think of a data structure from the time complexity point of view.</p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="pseudocode-example"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
@@ -706,6 +713,13 @@ Deletion from an array is the process of eliminating the value at a particular i
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Welcome to Data Structures in C++</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="Searching_bigO.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Searching and Big O Notations</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
