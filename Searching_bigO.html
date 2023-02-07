@@ -362,6 +362,32 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#big-o-notations">
    Big O Notations
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#o-1-example">
+     <span class="math notranslate nohighlight">
+      \(O(1)\)
+     </span>
+     example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#o-n-example">
+     <span class="math notranslate nohighlight">
+      \(O(n)\)
+     </span>
+     example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#o-log-2n-example">
+     <span class="math notranslate nohighlight">
+      \(O(log_2n)\)
+     </span>
+     example
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conclusion">
@@ -423,6 +449,32 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#big-o-notations">
    Big O Notations
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#o-1-example">
+     <span class="math notranslate nohighlight">
+      \(O(1)\)
+     </span>
+     example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#o-n-example">
+     <span class="math notranslate nohighlight">
+      \(O(n)\)
+     </span>
+     example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#o-log-2n-example">
+     <span class="math notranslate nohighlight">
+      \(O(log_2n)\)
+     </span>
+     example
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conclusion">
@@ -492,7 +544,7 @@ The worst-case scenario is the situation or input that forces an algorithm or da
 <p>See the animation<a class="footnote-reference brackets" href="#binarysearch" id="id1">1</a> of binary search algorithm.</p>
 <section id="procedure">
 <h3>Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">#</a></h3>
-<p>Given an array <span class="math notranslate nohighlight">\(A\)</span> of <span class="math notranslate nohighlight">\(n\)</span> elements with values or records <span class="math notranslate nohighlight">\(A_0\)</span>,<span class="math notranslate nohighlight">\(A_1\)</span>,<span class="math notranslate nohighlight">\(A_2\)</span>,…,<span class="math notranslate nohighlight">\(A_{n-1}\)</span> sorted such that <span class="math notranslate nohighlight">\(A_0\)</span> <span class="math notranslate nohighlight">\(\leq\)</span> <span class="math notranslate nohighlight">\(A_1\)</span> <span class="math notranslate nohighlight">\(\leq\)</span> <span class="math notranslate nohighlight">\(A_2\)</span> <span class="math notranslate nohighlight">\(\leq\)</span> … <span class="math notranslate nohighlight">\(\leq\)</span> <span class="math notranslate nohighlight">\(A_{n-1}\)</span>, and target value <span class="math notranslate nohighlight">\(T\)</span>, the following subroutine uses binary search to find the index of <span class="math notranslate nohighlight">\(T\)</span> in <span class="math notranslate nohighlight">\(A\)</span>.<span id="id2">[<a class="reference internal" href="#id10" title="Donald Knuth. The Art of Computer Programming. Volume 3. Addison-Wesley Professional, 1998. ISBN 978-0-201-89685-5.">Knu98</a>]</span></p>
+<p>Given an array <span class="math notranslate nohighlight">\(A\)</span> of <span class="math notranslate nohighlight">\(n\)</span> elements with values or records <span class="math notranslate nohighlight">\(A_0\)</span>,<span class="math notranslate nohighlight">\(A_1\)</span>,<span class="math notranslate nohighlight">\(A_2\)</span>,…,<span class="math notranslate nohighlight">\(A_{n-1}\)</span> sorted such that <span class="math notranslate nohighlight">\(A_0\)</span> <span class="math notranslate nohighlight">\(\leq\)</span> <span class="math notranslate nohighlight">\(A_1\)</span> <span class="math notranslate nohighlight">\(\leq\)</span> <span class="math notranslate nohighlight">\(A_2\)</span> <span class="math notranslate nohighlight">\(\leq\)</span> … <span class="math notranslate nohighlight">\(\leq\)</span> <span class="math notranslate nohighlight">\(A_{n-1}\)</span>, and target value <span class="math notranslate nohighlight">\(T\)</span>, the following subroutine uses binary search to find the index of <span class="math notranslate nohighlight">\(T\)</span> in <span class="math notranslate nohighlight">\(A\)</span>.<span id="id2">[<a class="reference internal" href="#id9" title="Donald Knuth. The Art of Computer Programming. Volume 3. Addison-Wesley Professional, 1998. ISBN 978-0-201-89685-5.">Knu98</a>]</span></p>
 <ol class="simple">
 <li><p>Set <span class="math notranslate nohighlight">\(L\)</span> to 0 and <span class="math notranslate nohighlight">\(R\)</span> to <span class="math notranslate nohighlight">\(n-1\)</span>.</p></li>
 <li><p>If <span class="math notranslate nohighlight">\(L\)</span> <span class="math notranslate nohighlight">\(\gt\)</span> <span class="math notranslate nohighlight">\(R\)</span>, the search terminates as unsuccessful.</p></li>
@@ -539,21 +591,59 @@ The worst-case scenario is the situation or input that forces an algorithm or da
 </section>
 <section id="big-o-notations">
 <h2>Big O Notations<a class="headerlink" href="#big-o-notations" title="Permalink to this headline">#</a></h2>
-<p>As discussed previously, each algorithm’s efficiency is primarily based on the number of steps it takes. The number of steps an algorithm takes is based on the worst-case and best-case scenarios, the number of elements in an array, and so on.</p>
-<p>To help ease communication regarding time complexity, computer scientists have borrowed a concept from the world of mathematics to describe a concise and consistent language around the efficiency of data structures and algorithms, as known as Big O Notation. In computer science, big O notation is used to classify algorithms according to how their run time or space requirements grow as the input size grows <span id="id3">[<a class="reference internal" href="#id11">Moh14</a>]</span>.</p>
+<p>As discussed previously, each algorithm’s efficiency is primarily based on the number of steps it takes. The number of steps an algorithm takes is based on the worst-case and best-case scenarios, and the number of elements in an array, and so on.</p>
+<p>To help ease communication regarding time complexity, computer scientists have borrowed a concept from the world of mathematics to describe a concise and consistent language around the efficiency of data structures and algorithms, as known as Big O Notation.</p>
+<div class="alert alert-block alert-info">
+In computer science, big O notation is used to classify algorithms according to how their run time or space requirements grow as the input size grows.
+</div>
+<p>In other words, big O notation is used to compare efficiencies between algorithms to achieve a task. It’s the letter O not the number 0. So what does the O stand for? ‘Order’, or ‘order of complexity’. For example, as discussed before that the linear search takes N steps. Therefore, in the language of big O notation, the linear search algorithm is expressed as O(N). The efficiency of each algorithm is dependent upon a scenario. I defined scenarios as worst-case, average-case, and best-case scenarios. For example, under a linear search algorithm, if the search element is the first element in the array, the complexity will be O(1). On the contrary, the complexity will be O(N) if the search element is the last element in the array. Generally speaking, the algorithm’s efficiency is gauged under the worst-case scenario.</p>
+<blockquote>
+<div><p><strong>The above is more of a conservative approach. However, if you know how inefficient an algorithm can get in a worst-case scenario, the better we are prepared for the worst and may strongly impact our choices.</strong></p>
+</div></blockquote>
+<p>O(1) algorithm complexity is independent of the number of elements in an array. For example, the complexity of inserting an element in an unsorted array is O(1) because it will take only a step to insert the element without shifting an element.</p>
+<blockquote>
+<div><p><strong>Big O tells you how the number of steps increases as the data changes.</strong></p>
+</div></blockquote>
+<p><a class="reference internal" href="#bigocomparisons"><span class="std std-numref">Fig. 6</span></a> is a comparison between time complexity of <span class="math notranslate nohighlight">\(O(n)\)</span>, <span class="math notranslate nohighlight">\(O(log_2n)\)</span> and <span class="math notranslate nohighlight">\(O(1)\)</span>. The comparison suggests that an algorithm with a time complexity of <span class="math notranslate nohighlight">\(O(log_2n)\)</span> always performs better than <span class="math notranslate nohighlight">\(O(n)\)</span>. Furthermore, the complexity of <span class="math notranslate nohighlight">\(O(1)\)</span> will always perform better regardless of n.</p>
+<figure class="align-default" id="bigocomparisons">
+<a class="reference internal image-reference" href="_images/bigocomparisons.svg"><img alt="_images/bigocomparisons.svg" height="400px" src="_images/bigocomparisons.svg" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Big O comparisons between O(n), O(log n), and O(1)</span><a class="headerlink" href="#bigocomparisons" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="o-1-example">
+<h3><span class="math notranslate nohighlight">\(O(1)\)</span> example<a class="headerlink" href="#o-1-example" title="Permalink to this headline">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; Code written in Python&quot;&quot;&quot;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apples&quot;</span><span class="p">,</span><span class="s2">&quot;oranges&quot;</span><span class="p">,</span><span class="s2">&quot;grapes&quot;</span><span class="p">,</span><span class="s2">&quot;pineapple&quot;</span><span class="p">]</span>
+<span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;kiwi&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>In the above example, a new element is appended at the end of the list. The insertion of a new element does not require any shifting of elements. Furthermore, the data is printed at index 0.</p>
+</section>
+<section id="o-n-example">
+<h3><span class="math notranslate nohighlight">\(O(n)\)</span> example<a class="headerlink" href="#o-n-example" title="Permalink to this headline">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; Code written in Python&quot;&quot;&quot;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apples&quot;</span><span class="p">,</span><span class="s2">&quot;oranges&quot;</span><span class="p">,</span><span class="s2">&quot;grapes&quot;</span><span class="p">,</span><span class="s2">&quot;pineapple&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span><span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In the above example, a list is defined, and the for loop iterates over the list and prints the element in each iteration. Hence, the for loop will run equal to the length of the list. This is an example of <span class="math notranslate nohighlight">\(O(n)\)</span> complexity.</p>
+</section>
+<section id="o-log-2n-example">
+<h3><span class="math notranslate nohighlight">\(O(log_2n)\)</span> example<a class="headerlink" href="#o-log-2n-example" title="Permalink to this headline">#</a></h3>
+</section>
 </section>
 <section id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
+<p>There is no single algorithm that is perfect for every situation. For example, sorted arrays provide improvements in terms of searching an element using a binary search; however, at the cost of increasing complexity when inserting elements in the array. On the contrary, if adding data is the main task, standard arrays may be a better choice due to the faster insertion rate. The Big-O notation is used to find the worst-case scenario of the time it takes an algorithm to do its job.</p>
 </section>
 <section id="bibliography">
 <h2>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">#</a></h2>
-<div class="docutils container" id="id4">
+<div class="docutils container" id="id3">
 <dl class="citation">
-<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id2">Knu98</a></span></dt>
+<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id2">Knu98</a></span></dt>
 <dd><p>Donald Knuth. <em>The Art of Computer Programming</em>. Volume 3. Addison-Wesley Professional, 1998. ISBN 978-0-201-89685-5.</p>
-</dd>
-<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id3">Moh14</a></span></dt>
-<dd><p><strong>missing journal in bigO</strong></p>
 </dd>
 </dl>
 </div>
