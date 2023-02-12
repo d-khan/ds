@@ -101,11 +101,52 @@
 # ```
 # 
 # ## Big O Notations
-# As discussed previously, each algorithm's efficiency is primarily based on the number of steps it takes. The number of steps an algorithm takes is based on the worst-case and best-case scenarios, the number of elements in an array, and so on. 
+# As discussed previously, each algorithm's efficiency is primarily based on the number of steps it takes. The number of steps an algorithm takes is based on the worst-case and best-case scenarios, and the number of elements in an array, and so on. 
 # 
-# To help ease communication regarding time complexity, computer scientists have borrowed a concept from the world of mathematics to describe a concise and consistent language around the efficiency of data structures and algorithms, as known as Big O Notation. In computer science, big O notation is used to classify algorithms according to how their run time or space requirements grow as the input size grows {cite}`bigO`.
+# To help ease communication regarding time complexity, computer scientists have borrowed a concept from the world of mathematics to describe a concise and consistent language around the efficiency of data structures and algorithms, as known as Big O Notation. 
+# 
+# <div class="alert alert-block alert-info">
+# In computer science, big O notation is used to classify algorithms according to how their run time or space requirements grow as the input size grows.
+# </div>
+# 
+# In other words, big O notation is used to compare efficiencies between algorithms to achieve a task. It’s the letter O not the number 0. So what does the O stand for? ‘Order’, or ‘order of complexity’. For example, as discussed before that the linear search takes N steps. Therefore, in the language of big O notation, the linear search algorithm is expressed as O(N). The efficiency of each algorithm is dependent upon a scenario. I defined scenarios as worst-case, average-case, and best-case scenarios. For example, under a linear search algorithm, if the search element is the first element in the array, the complexity will be O(1). On the contrary, the complexity will be O(N) if the search element is the last element in the array. Generally speaking, the algorithm's efficiency is gauged under the worst-case scenario.
+# 
+# >__The above is more of a conservative approach. However, if you know how inefficient an algorithm can get in a worst-case scenario, the better we are prepared for the worst and may strongly impact our choices.__
+# 
+# O(1) algorithm complexity is independent of the number of elements in an array. For example, the complexity of inserting an element in an unsorted array is O(1) because it will take only a step to insert the element without shifting an element.
+# 
+# >__Big O tells you how the number of steps increases as the data changes.__
+# 
+# {numref}`bigocomparisons` is a comparison between time complexity of $O(n)$, $O(log_2n)$ and $O(1)$. The comparison suggests that an algorithm with a time complexity of $O(log_2n)$ always performs better than $O(n)$. Furthermore, the complexity of $O(1)$ will always perform better regardless of n.
+# 
+# ```{figure} ./images/bigocomparisons.svg
+# :height: 400px
+# :name: bigocomparisons
+# Big O comparisons between O(n), O(log n), and O(1)
+# ```
+# 
+# ### $O(1)$ example
+# ```python
+# """ Code written in Python """
+# data = ["apples","oranges","grapes","pineapple"]
+# data.append("kiwi")
+# print(data[0])
+# ```
+# In the above example, a new element is appended at the end of the list. The insertion of a new element does not require any shifting of elements. Furthermore, the data is printed at index 0.
+# 
+# ### $O(n)$ example
+# ```python
+# """ Code written in Python """
+# data = ["apples","oranges","grapes","pineapple"]
+# for i in data:print(i)
+# ```
+# In the above example, a list is defined, and the for loop iterates over the list and prints the element in each iteration. Hence, the for loop will run equal to the length of the list. This is an example of $O(n)$ complexity.
+# 
+# ### $O(log_2n)$ example
+# 
 # 
 # ## Conclusion
+# There is no single algorithm that is perfect for every situation. For example, sorted arrays provide improvements in terms of searching an element using a binary search; however, at the cost of increasing complexity when inserting elements in the sorted array. On the contrary, if adding data is the main task, standard arrays may be a better choice due to the faster insertion rate. The Big-O notation is used to find the worst-case scenario of the time it takes an algorithm to do its job.
 # 
 # ## Bibliography
 # ```{bibliography}

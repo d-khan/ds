@@ -6,3 +6,4 @@ root: intro
 chapters:
 - file: Data_structures
 - file: Searching_bigO
+- file: Sorting_algorithms

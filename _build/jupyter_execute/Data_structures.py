@@ -199,7 +199,7 @@
 # 
 # However, if the deletion happens at index 0, then one step for deletion and N-1 steps to shift the elements in an array. For example, if an array size is 100, one step for deletion and 99 steps to shift elements in an array, which gives a total of N steps.
 # 
-# The following {numref}`time_complexity` summarizes the number of steps of best and worst-case scenarios on various operations on an array. N is the number of elements in an array.
+# The following {numref}`time_complexity` summarizes the number of steps of best and worst-case scenarios on various operations on an array. N is the number of elements in an array. 
 # 
 # ```{list-table} Time complexity of array data structure
 # :header-rows: 1

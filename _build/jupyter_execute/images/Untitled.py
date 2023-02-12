@@ -4,22 +4,31 @@
 # In[1]:
 
 
-'A'^'B'
+data = ["apples","oranges","grapes","pineapple"]
+
+
+# In[2]:
+
+
+for i in data: print(i)
 
 
 # In[3]:
 
 
-a = 10
-b = 1
-a^b
+data.append("kiwi")
 
 
 # In[4]:
 
 
-e = 11
-e ^ b
+data
+
+
+# In[5]:
+
+
+data[0]
 
 
 # In[ ]:
