@@ -127,6 +127,7 @@
 #   - 1560
 # 
 # ```
+# 
 # ```{figure} ./images/selectionsort.svg
 # :height: 400px
 # :name: selection_sort
@@ -136,8 +137,10 @@
 # 
 # According to the rules of Big O notations, the notation ignores constants and numbers that are not an exponent. For example, if you have a function running time of 5N, we say that this function runs on the order of the big O of N. This is because the constant five no longer matters as N gets large. In our case, even though the algorithm takes $\frac{N^2}{2}$ steps, we drop the "/ 2" because it’s a regular number and express the efficiency as $O(N^2)$. Another example is if an algorithm takes 100N, it is still considered $O(N)$.
 # 
+# Big O notation only takes into account of higher degree polynomial. For example, if an algorithm steps follow a quadratic equation, then the big O notation will be $O(N^2)$, ignoring lower degree polynomial. Similarly, if an algorithm follows a cubic function $f(x) = ax^3+bx^2+cx+d$, the big O notation will be $O(N^3)$.  
+# 
 # >__Why $O(N)$ and $O(N^2)$ are considered as two seperate categories?__  
-# The Big O Notation does not care about the number of steps an algorithm takes. It cares about the long-term trajectory of the algorithm's steps as the data size increases. $O(N)$ tells the story of linear growth, whereas $O(N^2)$ tell the story of exponential growth. Any constant multiplies or divides with the notation does not change the linear or exponential nature of the algorithm.
+# The Big O Notation does not care about the number of steps an algorithm takes. It cares about the long-term trajectory of the algorithm's steps as the data size increases. $O(N)$ tells the story of linear growth, whereas $O(N^2)$ tell the story of quadratic growth. Any constant multiplies or divides with the notation does not change the linear or higher order nature of the algorithm.
 # 
 # {numref}`bigOnotationcomparison` shows the relationship between the linear and the exponential growth of an algorithm. The overall relationship is linear regardless of a multiplier, and under large N, the exponential underperforms than linear.
 # 
@@ -147,15 +150,74 @@
 # Comparison of linear and exponential relationship
 # ```
 # 
-# >__The Selection Sort algorithm, similar to the Bubble sort, takes $N^2$ steps and has an efficiency of $O(N^2)$. Also referred as quadratic time.__
+# >__The Selection Sort algorithm, similar to the Bubble sort, takes $N^2$ steps and has an efficiency of $O(N^2)$.__
 # 
 # ## Insertion sort
+# As we learn more about sorting algorithms, you will notice that some sorting algorithms possess the same time complexity under the worst-case scenario. Still, they may have different time complexity under the best or average case scenarios. However, till now, I have mainly discussed the worst-case scenario. This is because, theoretically, if an algorithm works well in a worst-case scenario, it is valid to say that it will perform better in any given scenario. Therefore, this section will further discuss how the algorithm behaves under various scenarios.
 # 
-# ## Quick sort
+# (isteps)=
+# ### Insertion sort steps
+# The following are the steps involved in the insertion sort.
+# 1. In insertion sort, the element at index $i$ is compared with the elements at index $i-1$, where the index cannot be a negative number and the index is less than $N$; where $N$ is the length of the array.
+# 2. The sort begins by selecting an element for inspection. The first inspected element at index $i=1$ is compared with the element at $i-1$. If the $i^{th}$ element is less than $i-1$ element, then elements at index $i$ and $i-1$ are swapped, and $i^{th}$ index reset to $i-1$. If the $i^{th}$ element is greater than $i-1$ element, then no swap, and inspect another element at index $i+1$. The selection of inspected elements ends when $i=0$.
+# 3. The array is sorted, and no additional element is inspected, $i=N$.
 # 
-# ## Merge sort
+# {numref}`insertion_sort` shows worst and best-case scenarios. The compare and swap operations are represented in C and S circles, respectively. Finally, the element is inspected based on the steps mentioned in {ref}`isteps`.
 # 
-# ## Algorithm classification
+# ```{figure} ./images/Insertion_sort.svg
+# :height: 1100px
+# :name: insertion_sort
+# Insertion sort
+# ```
+# 
+# Interested readers can view the [animation of insertion sort](https://visualgo.net/en/sorting) in action. Make sure to select the appropriate algorithm before starting the animation.
+# 
+# The following is the pseudocode of the Insertion sort algorithm[^isort].
+# 
+# [^isort]:https://en.wikipedia.org/wiki/Insertion_sort#:~:text=Insertion%20sort%20is%20a%20simple,%2C%20heapsort%2C%20or%20merge%20sort
+# 
+# ```
+# i ← 1
+# while i < length(A) // where A is the array
+#     j ← i
+#     while j > 0 and A[j-1] > A[j]
+#         swap A[j] and A[j-1]
+#         j ← j - 1
+#     end while
+#     i ← i + 1
+# end while
+# ```
+# 
+# ### Efficiency of Insertion sort
+# {numref}`insertion_sort` shows that the total number of comparison and swap operations is 20 in the worst-case scenario[^compare]. In contrast, there is no swap operation in the best-case scenario, because all elements are sorted, but there are $N-1$ comparisons. 
+# 
+# [^compare]:Comparison and swap operations under worst-case sceanrio uses $(N-1)+(N-2)+...+1$ where $N$ is the number of elements.
+# 
+# ```{list-table} Time complexity of Insertion Sort algorithm under worst and best-case scenarios
+# :header-rows: 1
+# :name: i_sort_comparison
+# * - N
+#   - Insertion sort compare & swap operations (worst-case)
+#   - Insertion sort compare & swap operations (best-case)
+# * - 10
+#   - 90
+#   - 9
+# * - 20
+#   - 380
+#   - 19
+# * - 30
+#   - 870
+#   - 29
+# * - 40
+#   - 1560
+#   - 39
+# 
+# ```
+# {numref}`i_sort_comparison` shows that the closest approximation to the worst-case scenario is $N^2$. However, under the best-case scenario, the time complexity is $O(N)$ steps. Theoretically, under the average-case scenario, the time complexity of the upper and lower bound would be between $O(N^2)$ and $O(N)$, respectively. I have done some random tests to determine the time complexity under the average-case scenario, and it turned out to be $O(N^2)$.
+# 
+# The selection sort time complexity is $O(N^2)$ for all three cases. The insertion sort performs well under the best-case scenario compared to the selection sort. On the contrary, the time complexity of Bubble sort and Insertion sort algorithms are the same in all three cases.
+# 
+# >__The time complexity of the Insertion Sort algorithm under the worst and average case scenarios are $O(N^2)$. However, under the best-case scenario, the time complexity is $O(N)$.__
 # 
 # ## Conclusion
-# 
+# Knowing how an algorithm behaves under different conditions is essential for a programmer. The performance of each algorithm is also dependent upon the number of elements. Some algorithms are designed to handle a large number of elements efficiently. It is a programmer's job to select the correct algorithm for the right job.
