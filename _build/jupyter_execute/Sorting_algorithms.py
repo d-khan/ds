@@ -164,7 +164,7 @@
 # 
 # {numref}`insertion_sort` shows worst and best-case scenarios. The compare and swap operations are represented in C and S circles, respectively. Finally, the element is inspected based on the steps mentioned in {ref}`isteps`.
 # 
-# ```{figure} ./images/Insertion_sort.svg
+# ```{figure} ./images/Insertionsort.svg
 # :height: 1100px
 # :name: insertion_sort
 # Insertion sort
