@@ -369,21 +369,18 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#insertion-sort">
    Insertion sort
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#quick-sort">
-   Quick sort
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#merge-sort">
-   Merge sort
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#algorithm-classification">
-   Algorithm classification
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#insertion-sort-steps">
+     Insertion sort steps
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#efficiency-of-insertion-sort">
+     Efficiency of Insertion sort
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conclusion">
@@ -442,21 +439,18 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#insertion-sort">
    Insertion sort
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#quick-sort">
-   Quick sort
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#merge-sort">
-   Merge sort
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#algorithm-classification">
-   Algorithm classification
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#insertion-sort-steps">
+     Insertion sort steps
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#efficiency-of-insertion-sort">
+     Efficiency of Insertion sort
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conclusion">
@@ -616,9 +610,10 @@ In this chapter, we will extend our discussion of Big O notations, include some 
 </figure>
 <p><a class="reference internal" href="#id5"><span class="std std-numref">Fig. 10</span></a> is a graphical representation of the data shown in <a class="reference internal" href="#s-sort"><span class="std std-numref">Table 5</span></a>. The time complexity of the Selection sort is approximately <span class="math notranslate nohighlight">\(O(\frac{N^2}{2})\)</span>. By looking at the graph, it shows that the Selection sort is efficient as compared to the Bubble sort. However, from the eye of Big O notations, these two algorithms have the same time complexity, and there is a reason, which I will explain below.</p>
 <p>According to the rules of Big O notations, the notation ignores constants and numbers that are not an exponent. For example, if you have a function running time of 5N, we say that this function runs on the order of the big O of N. This is because the constant five no longer matters as N gets large. In our case, even though the algorithm takes <span class="math notranslate nohighlight">\(\frac{N^2}{2}\)</span> steps, we drop the “/ 2” because it’s a regular number and express the efficiency as <span class="math notranslate nohighlight">\(O(N^2)\)</span>. Another example is if an algorithm takes 100N, it is still considered <span class="math notranslate nohighlight">\(O(N)\)</span>.</p>
+<p>Big O notation only takes into account of higher degree polynomial. For example, if an algorithm steps follow a quadratic equation, then the big O notation will be <span class="math notranslate nohighlight">\(O(N^2)\)</span>, ignoring lower degree polynomial. Similarly, if an algorithm follows a cubic function <span class="math notranslate nohighlight">\(f(x) = ax^3+bx^2+cx+d\)</span>, the big O notation will be <span class="math notranslate nohighlight">\(O(N^3)\)</span>.</p>
 <blockquote>
 <div><p><strong>Why <span class="math notranslate nohighlight">\(O(N)\)</span> and <span class="math notranslate nohighlight">\(O(N^2)\)</span> are considered as two seperate categories?</strong><br />
-The Big O Notation does not care about the number of steps an algorithm takes. It cares about the long-term trajectory of the algorithm’s steps as the data size increases. <span class="math notranslate nohighlight">\(O(N)\)</span> tells the story of linear growth, whereas <span class="math notranslate nohighlight">\(O(N^2)\)</span> tell the story of exponential growth. Any constant multiplies or divides with the notation does not change the linear or exponential nature of the algorithm.</p>
+The Big O Notation does not care about the number of steps an algorithm takes. It cares about the long-term trajectory of the algorithm’s steps as the data size increases. <span class="math notranslate nohighlight">\(O(N)\)</span> tells the story of linear growth, whereas <span class="math notranslate nohighlight">\(O(N^2)\)</span> tell the story of quadratic growth. Any constant multiplies or divides with the notation does not change the linear or higher order nature of the algorithm.</p>
 </div></blockquote>
 <p><a class="reference internal" href="#bigonotationcomparison"><span class="std std-numref">Fig. 11</span></a> shows the relationship between the linear and the exponential growth of an algorithm. The overall relationship is linear regardless of a multiplier, and under large N, the exponential underperforms than linear.</p>
 <figure class="align-default" id="bigonotationcomparison">
@@ -628,24 +623,87 @@ The Big O Notation does not care about the number of steps an algorithm takes. I
 </figcaption>
 </figure>
 <blockquote>
-<div><p><strong>The Selection Sort algorithm, similar to the Bubble sort, takes <span class="math notranslate nohighlight">\(N^2\)</span> steps and has an efficiency of <span class="math notranslate nohighlight">\(O(N^2)\)</span>. Also referred as quadratic time.</strong></p>
+<div><p><strong>The Selection Sort algorithm, similar to the Bubble sort, takes <span class="math notranslate nohighlight">\(N^2\)</span> steps and has an efficiency of <span class="math notranslate nohighlight">\(O(N^2)\)</span>.</strong></p>
 </div></blockquote>
 </section>
 </section>
 <section id="insertion-sort">
 <h2>Insertion sort<a class="headerlink" href="#insertion-sort" title="Permalink to this headline">#</a></h2>
+<p>As we learn more about sorting algorithms, you will notice that some sorting algorithms possess the same time complexity under the worst-case scenario. Still, they may have different time complexity under the best or average case scenarios. However, till now, I have mainly discussed the worst-case scenario. This is because, theoretically, if an algorithm works well in a worst-case scenario, it is valid to say that it will perform better in any given scenario. Therefore, this section will further discuss how the algorithm behaves under various scenarios.</p>
+<section id="insertion-sort-steps">
+<span id="isteps"></span><h3>Insertion sort steps<a class="headerlink" href="#insertion-sort-steps" title="Permalink to this headline">#</a></h3>
+<p>The following are the steps involved in the insertion sort.</p>
+<ol class="simple">
+<li><p>In insertion sort, the element at index <span class="math notranslate nohighlight">\(i\)</span> is compared with the elements at index <span class="math notranslate nohighlight">\(i-1\)</span>, where the index cannot be a negative number and the index is less than <span class="math notranslate nohighlight">\(N\)</span>; where <span class="math notranslate nohighlight">\(N\)</span> is the length of the array.</p></li>
+<li><p>The sort begins by selecting an element for inspection. The first inspected element at index <span class="math notranslate nohighlight">\(i=1\)</span> is compared with the element at <span class="math notranslate nohighlight">\(i-1\)</span>. If the <span class="math notranslate nohighlight">\(i^{th}\)</span> element is less than <span class="math notranslate nohighlight">\(i-1\)</span> element, then elements at index <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(i-1\)</span> are swapped, and <span class="math notranslate nohighlight">\(i^{th}\)</span> index reset to <span class="math notranslate nohighlight">\(i-1\)</span>. If the <span class="math notranslate nohighlight">\(i^{th}\)</span> element is greater than <span class="math notranslate nohighlight">\(i-1\)</span> element, then no swap, and inspect another element at index <span class="math notranslate nohighlight">\(i+1\)</span>. The selection of inspected elements ends when <span class="math notranslate nohighlight">\(i=0\)</span>.</p></li>
+<li><p>The array is sorted, and no additional element is inspected, <span class="math notranslate nohighlight">\(i=N\)</span>.</p></li>
+</ol>
+<p><a class="reference internal" href="#id6"><span class="std std-numref">Fig. 12</span></a> shows worst and best-case scenarios. The compare and swap operations are represented in C and S circles, respectively. Finally, the element is inspected based on the steps mentioned in <a class="reference internal" href="#isteps"><span class="std std-ref">Insertion sort steps</span></a>.</p>
+<figure class="align-default" id="id6">
+<a class="reference internal image-reference" href="_images/Insertion_sort.svg"><img alt="_images/Insertion_sort.svg" height="1100px" src="_images/Insertion_sort.svg" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Insertion sort</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Interested readers can view the <a class="reference external" href="https://visualgo.net/en/sorting">animation of insertion sort</a> in action. Make sure to select the appropriate algorithm before starting the animation.</p>
+<p>The following is the pseudocode of the Insertion sort algorithm<a class="footnote-reference brackets" href="#isort" id="id7">4</a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>i ← 1
+while i &lt; length(A) // where A is the array
+    j ← i
+    while j &gt; 0 and A[j-1] &gt; A[j]
+        swap A[j] and A[j-1]
+        j ← j - 1
+    end while
+    i ← i + 1
+end while
+</pre></div>
+</div>
 </section>
-<section id="quick-sort">
-<h2>Quick sort<a class="headerlink" href="#quick-sort" title="Permalink to this headline">#</a></h2>
+<section id="efficiency-of-insertion-sort">
+<h3>Efficiency of Insertion sort<a class="headerlink" href="#efficiency-of-insertion-sort" title="Permalink to this headline">#</a></h3>
+<p><a class="reference internal" href="#id6"><span class="std std-numref">Fig. 12</span></a> shows that the total number of comparison and swap operations is 20 in the worst-case scenario<a class="footnote-reference brackets" href="#compare" id="id8">5</a>. In contrast, there is no swap operation in the best-case scenario, because all elements are sorted, but there are <span class="math notranslate nohighlight">\(N-1\)</span> comparisons.</p>
+<table class="table" id="i-sort-comparison">
+<caption><span class="caption-number">Table 6 </span><span class="caption-text">Time complexity of Insertion Sort algorithm under worst and best-case scenarios</span><a class="headerlink" href="#i-sort-comparison" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>N</p></th>
+<th class="head"><p>Insertion sort compare &amp; swap operations (worst-case)</p></th>
+<th class="head"><p>Insertion sort compare &amp; swap operations (best-case)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>90</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-odd"><td><p>20</p></td>
+<td><p>380</p></td>
+<td><p>19</p></td>
+</tr>
+<tr class="row-even"><td><p>30</p></td>
+<td><p>870</p></td>
+<td><p>29</p></td>
+</tr>
+<tr class="row-odd"><td><p>40</p></td>
+<td><p>1560</p></td>
+<td><p>39</p></td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="#i-sort-comparison"><span class="std std-numref">Table 6</span></a> shows that the closest approximation to the worst-case scenario is <span class="math notranslate nohighlight">\(N^2\)</span>. However, under the best-case scenario, the time complexity is <span class="math notranslate nohighlight">\(O(N)\)</span> steps. Theoretically, under the average-case scenario, the time complexity of the upper and lower bound would be between <span class="math notranslate nohighlight">\(O(N^2)\)</span> and <span class="math notranslate nohighlight">\(O(N)\)</span>, respectively. I have done some random tests to determine the time complexity under the average-case scenario, and it turned out to be <span class="math notranslate nohighlight">\(O(N^2)\)</span>.</p>
+<p>The selection sort time complexity is <span class="math notranslate nohighlight">\(O(N^2)\)</span> for all three cases. The insertion sort performs well under the best-case scenario compared to the selection sort. On the contrary, the time complexity of Bubble sort and Insertion sort algorithms are the same in all three cases.</p>
+<blockquote>
+<div><p><strong>The time complexity of the Insertion Sort algorithm under the worst and average case scenarios are <span class="math notranslate nohighlight">\(O(N^2)\)</span>. However, under the best-case scenario, the time complexity is <span class="math notranslate nohighlight">\(O(N)\)</span>.</strong></p>
+</div></blockquote>
 </section>
-<section id="merge-sort">
-<h2>Merge sort<a class="headerlink" href="#merge-sort" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="algorithm-classification">
-<h2>Algorithm classification<a class="headerlink" href="#algorithm-classification" title="Permalink to this headline">#</a></h2>
 </section>
 <section id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
+<p>Knowing how an algorithm behaves under different conditions is essential for a programmer. The performance of each algorithm is also dependent upon the number of elements. Some algorithms are designed to handle a large number of elements efficiently. It is a programmer’s job to select the correct algorithm for the right job.</p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="opsearch"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
@@ -656,6 +714,12 @@ The Big O Notation does not care about the number of steps an algorithm takes. I
 </dd>
 <dt class="label" id="ssort"><span class="brackets"><a class="fn-backref" href="#id4">3</a></span></dt>
 <dd><p>Bubble sort comparisons / selection sort of each <span class="math notranslate nohighlight">\(N\)</span> where <span class="math notranslate nohighlight">\(N=[10,20,30,40]\)</span> and take average.</p>
+</dd>
+<dt class="label" id="isort"><span class="brackets"><a class="fn-backref" href="#id7">4</a></span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Insertion_sort#:~:text=Insertion%20sort%20is%20a%20simple,%2C%20heapsort%2C%20or%20merge%20sort">https://en.wikipedia.org/wiki/Insertion_sort#:~:text=Insertion sort is a simple,, heapsort, or merge sort</a></p>
+</dd>
+<dt class="label" id="compare"><span class="brackets"><a class="fn-backref" href="#id8">5</a></span></dt>
+<dd><p>Comparison and swap operations under worst-case sceanrio uses <span class="math notranslate nohighlight">\((N-1)+(N-2)+...+1\)</span> where <span class="math notranslate nohighlight">\(N\)</span> is the number of elements.</p>
 </dd>
 </dl>
 </section>
