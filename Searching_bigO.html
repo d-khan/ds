@@ -131,6 +131,11 @@ const thebe_selector_output = ".output, .cell_output"
    Sorting algorithms
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hashtables.html">
+   Hash Tables
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -400,11 +405,6 @@ title="Print to PDF"
    Conclusion
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bibliography">
-   Bibliography
-  </a>
- </li>
 </ul>
 
     </nav>
@@ -487,11 +487,6 @@ title="Print to PDF"
    Conclusion
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bibliography">
-   Bibliography
-  </a>
- </li>
 </ul>
 
                         </nav>
@@ -550,7 +545,7 @@ The worst-case scenario is the situation or input that forces an algorithm or da
 <p>See the animation<a class="footnote-reference brackets" href="#binarysearch" id="id1">1</a> of binary search algorithm.</p>
 <section id="procedure">
 <h3>Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">#</a></h3>
-<p>Given an array <span class="math notranslate nohighlight">\(A\)</span> of <span class="math notranslate nohighlight">\(n\)</span> elements with values or records <span class="math notranslate nohighlight">\(A_0\)</span>,<span class="math notranslate nohighlight">\(A_1\)</span>,<span class="math notranslate nohighlight">\(A_2\)</span>,…,<span class="math notranslate nohighlight">\(A_{n-1}\)</span> sorted such that <span class="math notranslate nohighlight">\(A_0\)</span> <span class="math notranslate nohighlight">\(\leq\)</span> <span class="math notranslate nohighlight">\(A_1\)</span> <span class="math notranslate nohighlight">\(\leq\)</span> <span class="math notranslate nohighlight">\(A_2\)</span> <span class="math notranslate nohighlight">\(\leq\)</span> … <span class="math notranslate nohighlight">\(\leq\)</span> <span class="math notranslate nohighlight">\(A_{n-1}\)</span>, and target value <span class="math notranslate nohighlight">\(T\)</span>, the following subroutine uses binary search to find the index of <span class="math notranslate nohighlight">\(T\)</span> in <span class="math notranslate nohighlight">\(A\)</span>.<span id="id2">[<a class="reference internal" href="#id9" title="Donald Knuth. The Art of Computer Programming. Volume 3. Addison-Wesley Professional, 1998. ISBN 978-0-201-89685-5.">Knu98</a>]</span></p>
+<p>Given an array <span class="math notranslate nohighlight">\(A\)</span> of <span class="math notranslate nohighlight">\(n\)</span> elements with values or records <span class="math notranslate nohighlight">\(A_0\)</span>,<span class="math notranslate nohighlight">\(A_1\)</span>,<span class="math notranslate nohighlight">\(A_2\)</span>,…,<span class="math notranslate nohighlight">\(A_{n-1}\)</span> sorted such that <span class="math notranslate nohighlight">\(A_0\)</span> <span class="math notranslate nohighlight">\(\leq\)</span> <span class="math notranslate nohighlight">\(A_1\)</span> <span class="math notranslate nohighlight">\(\leq\)</span> <span class="math notranslate nohighlight">\(A_2\)</span> <span class="math notranslate nohighlight">\(\leq\)</span> … <span class="math notranslate nohighlight">\(\leq\)</span> <span class="math notranslate nohighlight">\(A_{n-1}\)</span>, and target value <span class="math notranslate nohighlight">\(T\)</span>, the following subroutine uses binary search to find the index of <span class="math notranslate nohighlight">\(T\)</span> in <span class="math notranslate nohighlight">\(A\)</span>.<span id="id2">[<a class="reference internal" href="hashtables.html#id13" title="Donald Knuth. The Art of Computer Programming. Volume 3. Addison-Wesley Professional, 1998. ISBN 978-0-201-89685-5.">Knu98</a>]</span></p>
 <ol class="simple">
 <li><p>Set <span class="math notranslate nohighlight">\(L\)</span> to 0 and <span class="math notranslate nohighlight">\(R\)</span> to <span class="math notranslate nohighlight">\(n-1\)</span>.</p></li>
 <li><p>If <span class="math notranslate nohighlight">\(L\)</span> <span class="math notranslate nohighlight">\(\gt\)</span> <span class="math notranslate nohighlight">\(R\)</span>, the search terminates as unsuccessful.</p></li>
@@ -643,16 +638,6 @@ In computer science, big O notation is used to classify algorithms according to 
 <section id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>There is no single algorithm that is perfect for every situation. For example, sorted arrays provide improvements in terms of searching an element using a binary search; however, at the cost of increasing complexity when inserting elements in the sorted array. On the contrary, if adding data is the main task, standard arrays may be a better choice due to the faster insertion rate. The Big-O notation is used to find the worst-case scenario of the time it takes an algorithm to do its job.</p>
-</section>
-<section id="bibliography">
-<h2>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">#</a></h2>
-<div class="docutils container" id="id3">
-<dl class="citation">
-<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id2">Knu98</a></span></dt>
-<dd><p>Donald Knuth. <em>The Art of Computer Programming</em>. Volume 3. Addison-Wesley Professional, 1998. ISBN 978-0-201-89685-5.</p>
-</dd>
-</dl>
-</div>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="binarysearch"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
