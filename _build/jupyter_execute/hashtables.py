@@ -166,7 +166,7 @@
 # 
 # 
 # ## Conclusion
-# Hash tables, when implemented correctly, can deliver O(1) performance. Hash tables are used when data is organized in key-value pairs. The collisions can be rectified by open and closed addressing. In this chapter, we covered closed addressing. There is no need to use a hash function when the time complexity reaches O(N) since computing hash values is an extra burden to the processor.
+# Hash tables, when implemented correctly, can deliver $O(1)$ performance. Hash tables are used when data is organized in key-value pairs. The collisions can be rectified by open and closed addressing. In this chapter, we covered closed addressing. There is no need to use a hash function when the time complexity reaches $O(N)$ since computing hash values is an extra burden to the processor.
 # 
 # 
 # 
