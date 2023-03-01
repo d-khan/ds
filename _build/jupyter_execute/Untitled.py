@@ -4,26 +4,43 @@
 # In[1]:
 
 
-x = 0
+medical_record = {123456789: "John Smith", "Italy": "Rome", "England": "London"}
 
 
 # In[2]:
 
 
-print(x)
+medical_record.keys()
 
 
 # In[3]:
 
 
-x = "Hello World"
-print(x)
+medical_record.items()
 
 
 # In[4]:
 
 
-my_email = "dkhan1010@gmail.com"
+hash("Hello World")
+
+
+# In[5]:
+
+
+hash("H")
+
+
+# In[6]:
+
+
+hash("Hello")
+
+
+# In[7]:
+
+
+hash("hi")
 
 
 # In[ ]:

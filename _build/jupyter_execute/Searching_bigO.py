@@ -147,8 +147,3 @@
 # 
 # ## Conclusion
 # There is no single algorithm that is perfect for every situation. For example, sorted arrays provide improvements in terms of searching an element using a binary search; however, at the cost of increasing complexity when inserting elements in the sorted array. On the contrary, if adding data is the main task, standard arrays may be a better choice due to the faster insertion rate. The Big-O notation is used to find the worst-case scenario of the time it takes an algorithm to do its job.
-# 
-# ## Bibliography
-# ```{bibliography}
-# 
-# ```
