@@ -136,6 +136,11 @@ const thebe_selector_output = ".output, .cell_output"
    Hash Tables
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="stacks.html">
+   Stacks and Queues
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -545,7 +550,7 @@ The worst-case scenario is the situation or input that forces an algorithm or da
 <p>See the animation<a class="footnote-reference brackets" href="#binarysearch" id="id1">1</a> of binary search algorithm.</p>
 <section id="procedure">
 <h3>Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">#</a></h3>
-<p>Given an array <span class="math notranslate nohighlight">\(A\)</span> of <span class="math notranslate nohighlight">\(n\)</span> elements with values or records <span class="math notranslate nohighlight">\(A_0\)</span>,<span class="math notranslate nohighlight">\(A_1\)</span>,<span class="math notranslate nohighlight">\(A_2\)</span>,…,<span class="math notranslate nohighlight">\(A_{n-1}\)</span> sorted such that <span class="math notranslate nohighlight">\(A_0\)</span> <span class="math notranslate nohighlight">\(\leq\)</span> <span class="math notranslate nohighlight">\(A_1\)</span> <span class="math notranslate nohighlight">\(\leq\)</span> <span class="math notranslate nohighlight">\(A_2\)</span> <span class="math notranslate nohighlight">\(\leq\)</span> … <span class="math notranslate nohighlight">\(\leq\)</span> <span class="math notranslate nohighlight">\(A_{n-1}\)</span>, and target value <span class="math notranslate nohighlight">\(T\)</span>, the following subroutine uses binary search to find the index of <span class="math notranslate nohighlight">\(T\)</span> in <span class="math notranslate nohighlight">\(A\)</span>.<span id="id2">[<a class="reference internal" href="hashtables.html#id13" title="Donald Knuth. The Art of Computer Programming. Volume 3. Addison-Wesley Professional, 1998. ISBN 978-0-201-89685-5.">Knu98</a>]</span></p>
+<p>Given an array <span class="math notranslate nohighlight">\(A\)</span> of <span class="math notranslate nohighlight">\(n\)</span> elements with values or records <span class="math notranslate nohighlight">\(A_0\)</span>,<span class="math notranslate nohighlight">\(A_1\)</span>,<span class="math notranslate nohighlight">\(A_2\)</span>,…,<span class="math notranslate nohighlight">\(A_{n-1}\)</span> sorted such that <span class="math notranslate nohighlight">\(A_0\)</span> <span class="math notranslate nohighlight">\(\leq\)</span> <span class="math notranslate nohighlight">\(A_1\)</span> <span class="math notranslate nohighlight">\(\leq\)</span> <span class="math notranslate nohighlight">\(A_2\)</span> <span class="math notranslate nohighlight">\(\leq\)</span> … <span class="math notranslate nohighlight">\(\leq\)</span> <span class="math notranslate nohighlight">\(A_{n-1}\)</span>, and target value <span class="math notranslate nohighlight">\(T\)</span>, the following subroutine uses binary search to find the index of <span class="math notranslate nohighlight">\(T\)</span> in <span class="math notranslate nohighlight">\(A\)</span>.<span id="id2">[<a class="reference internal" href="stacks.html#id7" title="Donald Knuth. The Art of Computer Programming. Volume 3. Addison-Wesley Professional, 1998. ISBN 978-0-201-89685-5.">Knu98</a>]</span></p>
 <ol class="simple">
 <li><p>Set <span class="math notranslate nohighlight">\(L\)</span> to 0 and <span class="math notranslate nohighlight">\(R\)</span> to <span class="math notranslate nohighlight">\(n-1\)</span>.</p></li>
 <li><p>If <span class="math notranslate nohighlight">\(L\)</span> <span class="math notranslate nohighlight">\(\gt\)</span> <span class="math notranslate nohighlight">\(R\)</span>, the search terminates as unsuccessful.</p></li>
