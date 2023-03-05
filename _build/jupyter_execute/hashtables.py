@@ -178,8 +178,3 @@
 # 
 # [^note4]:A space–time trade-off, also known as time–memory trade-off or the algorithmic space-time continuum in computer science is a case where an algorithm or program trades increased space usage with decreased time. Here, space refers to the data storage consumed in performing a given task (RAM, HDD, etc), and time refers to the time consumed in performing a given task (computation time or response time).
 # 
-# ## Bibliography
-# ```{bibliography}
-# 
-# ```
-# 

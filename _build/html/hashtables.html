@@ -54,6 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Stacks and Queues" href="stacks.html" />
     <link rel="prev" title="Sorting algorithms" href="Sorting_algorithms.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -133,6 +134,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Hash Tables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="stacks.html">
+   Stacks and Queues
   </a>
  </li>
 </ul>
@@ -409,11 +415,6 @@ title="Print to PDF"
    Conclusion
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bibliography">
-   Bibliography
-  </a>
- </li>
 </ul>
 
     </nav>
@@ -499,11 +500,6 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conclusion">
    Conclusion
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bibliography">
-   Bibliography
   </a>
  </li>
 </ul>
@@ -637,7 +633,7 @@ title="Print to PDF"
 <p><span class="caption-number">Fig. 15 </span><span class="caption-text">Hash Collisions</span><a class="headerlink" href="#dictionary3" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Collisions are dealt with two techniques: <strong>open addressing (aka closed hashing)</strong> and <strong>closed addressing (aka open hashing)</strong>. Open addressing is a method of collision resolution in hash tables. With this method, a hash collision is resolved by probing or searching through alternative locations in the array (the probe sequence) until either the target record is found or an unused array slot is found, which indicates that there is no such key in the table <span id="id4">[<a class="reference internal" href="#id18" title="Aaron M. Tenenbaum, Yedidyah Langsam and Moshe J. Augenstein. Data Structures Using C. Prentice Hall, 1 edition, 1990. ISBN 978-0131997462.">AMTA90</a>]</span>. Several techniques are based on open addressing, such as Linear Probing, Quadratic Probing, Double Hashing, and Cuckoo Hashing, a few examples.</p>
+<p>Collisions are dealt with two techniques: <strong>open addressing (aka closed hashing)</strong> and <strong>closed addressing (aka open hashing)</strong>. Open addressing is a method of collision resolution in hash tables. With this method, a hash collision is resolved by probing or searching through alternative locations in the array (the probe sequence) until either the target record is found or an unused array slot is found, which indicates that there is no such key in the table <span id="id4">[<a class="reference internal" href="stacks.html#id10" title="Aaron M. Tenenbaum, Yedidyah Langsam and Moshe J. Augenstein. Data Structures Using C. Prentice Hall, 1 edition, 1990. ISBN 978-0131997462.">AMTA90</a>]</span>. Several techniques are based on open addressing, such as Linear Probing, Quadratic Probing, Double Hashing, and Cuckoo Hashing, a few examples.</p>
 <blockquote>
 <div><p><strong>Open addressing (closed hashing) and closed addressing (open hashing) terms can be confusing.</strong></p>
 </div></blockquote>
@@ -654,11 +650,11 @@ title="Print to PDF"
 </section>
 <section id="insertion">
 <h4>Insertion<a class="headerlink" href="#insertion" title="Permalink to this headline">#</a></h4>
-<p>To insert a key–value pair <span class="math notranslate nohighlight">\((k,v)\)</span> into the table (possibly replacing any existing pair with the same key), the insertion algorithm follows the same sequence of cells that would be followed for a search until finding either an empty cell or a cell whose stored key is <span class="math notranslate nohighlight">\(k\)</span>. The new key–value pair is then placed into that cell <span id="id5">[<a class="reference internal" href="#id17" title="Michael T Goodrich and Roberto Tamassia. Algorithm Design and Applications. Willey, 1 edition, 2015. ISBN 978-1118335918.">GT15</a>]</span>. When the hash function causes a collision by mapping a new key to a cell of the hash table already occupied by another key, linear probing searches the table for the closest following free location and inserts the new key.</p>
+<p>To insert a key–value pair <span class="math notranslate nohighlight">\((k,v)\)</span> into the table (possibly replacing any existing pair with the same key), the insertion algorithm follows the same sequence of cells that would be followed for a search until finding either an empty cell or a cell whose stored key is <span class="math notranslate nohighlight">\(k\)</span>. The new key–value pair is then placed into that cell <span id="id5">[<a class="reference internal" href="stacks.html#id9" title="Michael T Goodrich and Roberto Tamassia. Algorithm Design and Applications. Willey, 1 edition, 2015. ISBN 978-1118335918.">GT15</a>]</span>. When the hash function causes a collision by mapping a new key to a cell of the hash table already occupied by another key, linear probing searches the table for the closest following free location and inserts the new key.</p>
 </section>
 <section id="deletion">
 <h4>Deletion<a class="headerlink" href="#deletion" title="Permalink to this headline">#</a></h4>
-<p>It is also possible to remove a key–value pair from the dictionary. However, the delete cannot simply mark the cell as empty. If the delete process mark the cells empty, then the search operation will stop the search when it passes the empty cell. As a result, the search cannot pass thru the empty cell. This problem can be solved by placing a special marker in place of the deleted cell, called a <strong>tombstone</strong>. The tombstone indicates that a cell was once occupied by a key but not any more. A tombstone can be used to store a new key. However, the insertion operation would follow the search operation (as discussed above) to verify that there is no duplicate in the table. However, the new key would be inserted into the first tombstone. However, after a series of intermixed insertion and deletion operations, some slots will contain tombstones. This will tend to lengthen the average distance from a record’s home position to the record itself, beyond where it could be if the tombstones did not exist. A typical database application will first load a collection of records into the hash table and then progress to a phase of intermixed insertions and deletions. After the table is loaded with the initial collection of records, the first few deletions will lengthen the average probe sequence distance for records (it will add tombstones). Over time, the average distance will reach an equilibrium point because insertions will tend to decrease the average distance by filling in tombstone slots<span id="id6">[<a class="reference internal" href="#id20" title="OpenDSA. Opendsa. 2016. URL: https://opendsa-server.cs.vt.edu/ODSA/Books/CS3/html/HashDel.html.">Ope16</a>]</span>.</p>
+<p>It is also possible to remove a key–value pair from the dictionary. However, the delete cannot simply mark the cell as empty. If the delete process mark the cells empty, then the search operation will stop the search when it passes the empty cell. As a result, the search cannot pass thru the empty cell. This problem can be solved by placing a special marker in place of the deleted cell, called a <strong>tombstone</strong>. The tombstone indicates that a cell was once occupied by a key but not any more. A tombstone can be used to store a new key. However, the insertion operation would follow the search operation (as discussed above) to verify that there is no duplicate in the table. However, the new key would be inserted into the first tombstone. However, after a series of intermixed insertion and deletion operations, some slots will contain tombstones. This will tend to lengthen the average distance from a record’s home position to the record itself, beyond where it could be if the tombstones did not exist. A typical database application will first load a collection of records into the hash table and then progress to a phase of intermixed insertions and deletions. After the table is loaded with the initial collection of records, the first few deletions will lengthen the average probe sequence distance for records (it will add tombstones). Over time, the average distance will reach an equilibrium point because insertions will tend to decrease the average distance by filling in tombstone slots<span id="id6">[<a class="reference internal" href="stacks.html#id12" title="OpenDSA. Opendsa. 2016. URL: https://opendsa-server.cs.vt.edu/ODSA/Books/CS3/html/HashDel.html.">Ope16</a>]</span>.</p>
 <p>One way of solving this problem is to periodically rehash the table by reinserting all records into a new hash table. Not only will this remove the tombstones, but it also provides an opportunity to place the most frequently accessed records into their home positions.</p>
 <blockquote>
 <div><p><strong>Record’s or key’s home position is the original position calculated by the hashing algorithm. The actual key position may be at the original position or at the first empty cell position.</strong></p>
@@ -676,7 +672,7 @@ title="Print to PDF"
 <h2>Hash table efficiency<a class="headerlink" href="#hash-table-efficiency" title="Permalink to this headline">#</a></h2>
 <p>The efficiency of hash table depends on several factors:</p>
 <p><strong>Type of hash function:</strong> Let’s say you have a hash function that generates limited hash values. Even though you have available memory space, the little hash values will use a specific memory section. As a result, the collision is imminent. A good hash function, therefore, distributes its data across all available memory cells. The more we can spread our data, the fewer collisions we will have.</p>
-<p><strong>Size of data in the hash table and available memory in the hash table:</strong> You probably know that a hash table’s efficiency increases when the number of collisions decreases. For example, if you want to store only ten elements in a memory size of 1000 cells, the collision probability is 0.01. On the other hand, reserving many cells to store limited data is inefficient in utilizing memory. A good hash table balances, avoiding collisions and not consuming much memory. The researcher suggests for every 7 data elements stored in a hash table; the memory should have ten cells. In other words, the ratio of data to cells is called the load factor, which is 0.7 based on the suggestion. The higher the load factor, the slower the retrieval. With open addressing, the load factor cannot exceed 1 <span id="id7">[<a class="reference internal" href="#id19" title="Thomas H. Cormen, Charles E. Leiserson and Ronald L. Rivest. Introduction to Algorithms. MIT Press, edition, 1990. ISBN.">THCR90</a>]</span>.</p>
+<p><strong>Size of data in the hash table and available memory in the hash table:</strong> You probably know that a hash table’s efficiency increases when the number of collisions decreases. For example, if you want to store only ten elements in a memory size of 1000 cells, the collision probability is 0.01. On the other hand, reserving many cells to store limited data is inefficient in utilizing memory. A good hash table balances, avoiding collisions and not consuming much memory. The researcher suggests for every 7 data elements stored in a hash table; the memory should have ten cells. In other words, the ratio of data to cells is called the load factor, which is 0.7 based on the suggestion. The higher the load factor, the slower the retrieval. With open addressing, the load factor cannot exceed 1 <span id="id7">[<a class="reference internal" href="stacks.html#id11" title="Thomas H. Cormen, Charles E. Leiserson and Ronald L. Rivest. Introduction to Algorithms. MIT Press, edition, 1990. ISBN.">THCR90</a>]</span>.</p>
 <blockquote>
 <div><p><strong>Hashing is an example of a space-time tradeoff<a class="footnote-reference brackets" href="#note4" id="id8">4</a>. If memory is infinite, the entire key can be used directly as an index to locate its value with a single memory access. On the other hand, if the time is infinite, values can be stored without regard for their keys, and a binary or linear search can be used to retrieve the element.</strong></p>
 </div></blockquote>
@@ -696,28 +692,6 @@ title="Print to PDF"
 <section id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>Hash tables, when implemented correctly, can deliver <span class="math notranslate nohighlight">\(O(1)\)</span> performance. Hash tables are used when data is organized in key-value pairs. The collisions can be rectified by open and closed addressing. In this chapter, we covered closed addressing. There is no need to use a hash function when the time complexity reaches <span class="math notranslate nohighlight">\(O(N)\)</span> since computing hash values is an extra burden to the processor.</p>
-</section>
-<section id="bibliography">
-<h2>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">#</a></h2>
-<div class="docutils container" id="id9">
-<dl class="citation">
-<dt class="label" id="id18"><span class="brackets"><a class="fn-backref" href="#id4">AMTA90</a></span></dt>
-<dd><p>Aaron M. Tenenbaum, Yedidyah Langsam and Moshe J. Augenstein. <em>Data Structures Using C</em>. Prentice Hall, 1 edition, 1990. ISBN 978-0131997462.</p>
-</dd>
-<dt class="label" id="id17"><span class="brackets"><a class="fn-backref" href="#id5">GT15</a></span></dt>
-<dd><p>Michael T Goodrich and Roberto Tamassia. <em>Algorithm Design and Applications</em>. Willey, 1 edition, 2015. ISBN 978-1118335918.</p>
-</dd>
-<dt class="label" id="id15"><span class="brackets">Knu98</span></dt>
-<dd><p>Donald Knuth. <em>The Art of Computer Programming</em>. Volume 3. Addison-Wesley Professional, 1998. ISBN 978-0-201-89685-5.</p>
-</dd>
-<dt class="label" id="id20"><span class="brackets"><a class="fn-backref" href="#id6">Ope16</a></span></dt>
-<dd><p>OpenDSA. Opendsa. 2016. URL: <a class="reference external" href="https://opendsa-server.cs.vt.edu/ODSA/Books/CS3/html/HashDel.html">https://opendsa-server.cs.vt.edu/ODSA/Books/CS3/html/HashDel.html</a>.</p>
-</dd>
-<dt class="label" id="id19"><span class="brackets"><a class="fn-backref" href="#id7">THCR90</a></span></dt>
-<dd><p>Thomas H. Cormen, Charles E. Leiserson and Ronald L. Rivest. <em>Introduction to Algorithms</em>. MIT Press, edition, 1990. ISBN.</p>
-</dd>
-</dl>
-</div>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="note1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
@@ -769,6 +743,13 @@ title="Print to PDF"
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Sorting algorithms</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="stacks.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Stacks and Queues</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>

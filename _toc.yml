@@ -8,3 +8,4 @@ chapters:
 - file: Searching_bigO
 - file: Sorting_algorithms
 - file: hashtables
+- file: stacks
